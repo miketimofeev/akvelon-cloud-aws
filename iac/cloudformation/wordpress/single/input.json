@@ -4,6 +4,6 @@
     { "ParameterKey": "KeyName", "ParameterValue": "wordpress_key_pair" },
     { "ParameterKey": "DBPassword", "ParameterValue": "abc123456" },
     { "ParameterKey": "DBUser", "ParameterValue": "test" },
-    { "ParameterKey": "VpcId", "ParameterValue": "vpc-e816318f" }
+    { "ParameterKey": "VpcId", "ParameterValue": "vpc-32d4805a" }
   ]
 }
