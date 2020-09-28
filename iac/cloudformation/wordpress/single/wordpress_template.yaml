@@ -256,10 +256,10 @@ Mappings:
       Arch: HVM64
   AWSRegionArch2AMI:
     eu-west-2:
-      HVM64: ami-0701e7be9b2a77600
+      HVM64: ami-09a1e275e350acf38
       HVMG2: NOT_SUPPORTED
     eu-west-1:
-      HVM64: ami-0701e7be9b2a77600
+      HVM64: ami-09a1e275e350acf38
       HVMG2: NOT_SUPPORTED
 Resources:
   WordpressSecurityGroup:
