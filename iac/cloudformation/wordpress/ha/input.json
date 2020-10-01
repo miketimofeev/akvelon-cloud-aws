@@ -1,10 +1,10 @@
 {
   "StackName": "MyStack",
   "Parameters": [
-    { "ParameterKey": "KeyName", "ParameterValue": "wordpress_key_pair" },
-    { "ParameterKey": "Subnets", "ParameterValue": "subnet-e99acc8e,subnet-24bbe36d" },
+    { "ParameterKey": "KeyName", "ParameterValue": "wordpress_keypair" },
+    { "ParameterKey": "Subnets", "ParameterValue": "subnet-4fe43637,subnet-5073577b" },
     { "ParameterKey": "DBPassword", "ParameterValue": "abc123456" },
     { "ParameterKey": "DBUser", "ParameterValue": "test" },
-    { "ParameterKey": "VpcId", "ParameterValue": "vpc-e816318f" }
+    { "ParameterKey": "VpcId", "ParameterValue": "vpc-17a5e46f" }
   ]
 }
