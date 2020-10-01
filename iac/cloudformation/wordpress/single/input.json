@@ -1,9 +1,9 @@
 {
   "StackName": "MyStack",
   "Parameters": [
-    { "ParameterKey": "KeyName", "ParameterValue": "wordpress_key_pair" },
+    { "ParameterKey": "KeyName", "ParameterValue": "wordpress_keypair" },
     { "ParameterKey": "DBPassword", "ParameterValue": "abc123456" },
     { "ParameterKey": "DBUser", "ParameterValue": "test" },
-    { "ParameterKey": "VpcId", "ParameterValue": "vpc-32d4805a" }
+    { "ParameterKey": "VpcId", "ParameterValue": "vpc-17a5e46f" }
   ]
 }
