@@ -5,17 +5,17 @@ variable "ec2_keypair_name" {
 
 variable "ec2_ami" {
   type    = string
-  default = "ami-0701e7be9b2a77600" # ubuntu image
+  default = "ami-07a29e5e945228fa1" # ubuntu image
 }
 
 variable "ec2_instance_type" {
   type    = string
-  default = "t2.small"
+  default = "t2.micro"
 }
 
 variable "db_instance_type" {
   type    = string
-  default = "db.t2.small"
+  default = "db.t2.micro"
 }
 
 variable "db_username" {
@@ -38,7 +38,23 @@ variable "db_allocated_storage" {
   default = 5
 }
 
-variable "vpc_id" {
-  type    = string
-  default = ""
+variable "instanceTenancy" {
+    default = "default"
+}
+
+variable "dnsSupport" {
+    default = true
+}
+
+variable "dnsHostNames" {
+    default = true
+}
+
+variable "vpcCIDRblock" {
+    default = "10.0.0.0/16"
+}
+
+variable "subnets_cidr" {
+	type = list
+	default = ["10.0.1.0/24", "10.0.2.0/24"]
 }

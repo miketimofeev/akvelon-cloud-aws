@@ -1,3 +1,7 @@
+resource "aws_db_subnet_group" "wordpress" {
+  subnet_ids = aws_subnet.public.*.id
+}
+
 resource "aws_security_group" "wordpress_db_sg" {
   description = "Open database for access"
   ingress {
@@ -13,7 +17,7 @@ resource "aws_security_group" "wordpress_db_sg" {
     to_port = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
-  vpc_id = var.vpc_id
+  vpc_id = aws_vpc.Wordpress_vpc.id
 }
 
 resource "aws_db_instance" "db" {
@@ -26,6 +30,7 @@ resource "aws_db_instance" "db" {
   allocated_storage = var.db_allocated_storage
   depends_on = [
     aws_security_group.wordpress_db_sg]
+  db_subnet_group_name = aws_db_subnet_group.wordpress.name
   vpc_security_group_ids = [
     aws_security_group.wordpress_db_sg.id]
   skip_final_snapshot = true
