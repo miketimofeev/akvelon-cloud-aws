@@ -48,7 +48,7 @@ export default class ArtistMutation {
   public async artistRemove(
     @Arg('id') id: string
   ): Promise<boolean> {
-    const { ConsumedCapacity } = await this.dynamodb.deleteItem({
+    const {ConsumedCapacity} = await this.dynamodb.deleteItem({
       TableName: ArtistModel.TableName,
       Key: {
         symbol: {
@@ -57,7 +57,8 @@ export default class ArtistMutation {
         createdAt: {
           S: id.split('#')[1]
         }
-      }
+      },
+      ReturnConsumedCapacity: 'TOTAL'
     }).promise();
     this.logger.info(`consumed ${ ConsumedCapacity.CapacityUnits } units for removing artist`);
     return true;

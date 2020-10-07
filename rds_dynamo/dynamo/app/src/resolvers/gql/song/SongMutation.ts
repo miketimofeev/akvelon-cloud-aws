@@ -71,7 +71,8 @@ export default class SongMutation {
         artistId: {
           S: artistId
         }
-      }
+      },
+      ReturnConsumedCapacity: 'TOTAL'
     }).promise();
     this.logger.info(`consumed ${ ConsumedCapacity.CapacityUnits } units for removing song`);
     return true;

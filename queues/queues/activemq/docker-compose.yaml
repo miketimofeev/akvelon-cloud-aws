@@ -1,0 +1,6 @@
+version: '2'
+services:
+  activemq:
+    image: rmohr/activemq
+    ports:
+      - "5672:5672"

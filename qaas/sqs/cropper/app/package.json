@@ -1,0 +1,24 @@
+{
+  "name": "sqs-aws-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node --cache-directory .temp ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.768.0",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.20",
+    "sharp": "^0.26.1"
+  },
+  "devDependencies": {
+    "@types/node": "^11.15.0",
+    "ts-node": "7.0.1",
+    "tslint": "5.19.0",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.5.3"
+  }
+}

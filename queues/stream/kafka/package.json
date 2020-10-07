@@ -1,0 +1,16 @@
+{
+  "name": "kafka-aws-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "kafka-node": "^4.1.3",
+    "kafkajs": "^1.11.0"
+  }
+}
