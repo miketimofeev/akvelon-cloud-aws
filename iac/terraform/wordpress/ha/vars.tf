@@ -37,3 +37,19 @@ variable "db_allocated_storage" {
   type = number
   default = 5
 }
+
+variable "vpc_id" {
+  type    = string
+  default = "vpc-e19e308a"
+}
+
+variable "subnet_ids" {
+  type    = list
+  default = [ "subnet-472dfb2c", "subnet-7a404f00" ]
+}
+
+variable "region" {
+  type    = string
+  default = "us-east-2"
+}
+©

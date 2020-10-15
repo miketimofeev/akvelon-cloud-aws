@@ -4,5 +4,5 @@ provider "aws" {
 }
 
 output "website" {
-  value = aws_instance.wordpress.public_dns
+  value = aws_lb.app_load_balancer.dns_name
 }
