@@ -1,5 +1,6 @@
 resource "aws_security_group" "wordpress_sg" {
   description = "Enable HTTP access via port 80 locked down to the load balancer + SSH access"
+  vpc_id = aws_vpc.Wordpress_vpc.id
   ingress {
     from_port = 80
     protocol = "tcp"
@@ -12,7 +13,6 @@ resource "aws_security_group" "wordpress_sg" {
     to_port = 22
     cidr_blocks = ["0.0.0.0/0"]
   }
-  vpc_id = var.vpc_id
   egress {
     from_port = 0
     protocol = "-1"
@@ -21,14 +21,12 @@ resource "aws_security_group" "wordpress_sg" {
   }
 }
 
-# how to get region from provider configuration
 resource "aws_launch_configuration" "autoscaling_conf" {
   name            = "autoscaling-launch-conf-wordpress"
   key_name        = var.ec2_keypair_name
   image_id        = var.ec2_ami
   instance_type   = var.ec2_instance_type
   security_groups = [aws_security_group.wordpress_sg.id]
-  depends_on      = [aws_security_group.wordpress_sg, aws_security_group.wordpress_db_sg, aws_db_instance.db]
 
   user_data = <<-EOT
             #!/bin/bash -x
@@ -75,7 +73,7 @@ resource "aws_autoscaling_group" "autoscaling_g" {
   min_size             = 1
   max_size             = 2
   desired_capacity     = 1
-  vpc_zone_identifier  = var.subnet_ids
+  vpc_zone_identifier  = aws_subnet.public.*.id
   target_group_arns    = [aws_lb_target_group.alb_tg.arn]
 }
 
