@@ -1,6 +1,6 @@
 provider "aws" {
   region = "us-west-2"
-  version = "3.8.0"
+  version = "3.11.0"
 }
 
 output "website" {
