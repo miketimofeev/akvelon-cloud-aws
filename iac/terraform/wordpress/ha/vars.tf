@@ -38,12 +38,23 @@ variable "db_allocated_storage" {
   default = 5
 }
 
-variable "vpc_id" {
-  type    = string
-  default = "vpc-17a5e46f"
+variable "instanceTenancy" {
+    default = "default"
 }
 
-variable "subnet_ids" {
-  type    = list
-  default = [ "subnet-1aac5350", "subnet-4fe43637" ]
+variable "dnsSupport" {
+    default = true
+}
+
+variable "dnsHostNames" {
+    default = true
+}
+
+variable "vpcCIDRblock" {
+    default = "10.0.0.0/16"
+}
+
+variable "subnets_cidr" {
+	type = list
+	default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
